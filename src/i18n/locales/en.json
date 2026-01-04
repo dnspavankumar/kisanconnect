@@ -1,0 +1,115 @@
+{
+  "common": {
+    "appName": "KisanMitra",
+    "tagline": "Your Smart Farming Companion",
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try Again",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "search": "Search",
+    "filter": "Filter",
+    "all": "All",
+    "needHelp": "Need help?",
+    "logout": "Logout"
+  },
+  "auth": {
+    "welcome": "Welcome to KisanMitra",
+    "subtitle": "Your trusted cotton farming assistant",
+    "loginTitle": "Login to Your Account",
+    "farmerId": "Farmer ID (Optional)",
+    "farmerIdPlaceholder": "Enter your Farmer ID",
+    "phoneNumber": "Phone Number",
+    "phonePlaceholder": "Enter 10-digit mobile number",
+    "getOtp": "Get OTP",
+    "enterOtp": "Enter OTP",
+    "otpSent": "OTP sent to",
+    "verifyLogin": "Verify & Login",
+    "resendOtp": "Resend OTP",
+    "resendIn": "Resend in",
+    "seconds": "seconds",
+    "invalidOtp": "Invalid OTP. Please try again.",
+    "otpExpired": "OTP expired. Please request a new one.",
+    "voiceInput": "Voice Input",
+    "speakNumber": "Speak your phone number",
+    "listening": "Listening..."
+  },
+  "dashboard": {
+    "greeting": "Namaste",
+    "welcomeBack": "Welcome back to your farm",
+    "todayWeather": "Today's Weather",
+    "quickActions": "Quick Actions",
+    "recentActivity": "Recent Activity"
+  },
+  "navigation": {
+    "home": "Home",
+    "chat": "AI Assistant",
+    "scan": "Scan Disease",
+    "news": "News & Schemes"
+  },
+  "weather": {
+    "temperature": "Temperature",
+    "humidity": "Humidity",
+    "wind": "Wind",
+    "condition": "Condition",
+    "feelsLike": "Feels like",
+    "sunny": "Sunny",
+    "cloudy": "Cloudy",
+    "rainy": "Rainy",
+    "partlyCloudy": "Partly Cloudy"
+  },
+  "chatbot": {
+    "title": "AI Farm Assistant",
+    "placeholder": "Ask about crops, weather, fertilizers...",
+    "voiceButton": "Tap to speak",
+    "sendMessage": "Send",
+    "thinking": "Thinking...",
+    "greeting": "Hello! I'm your AI farming assistant. How can I help you today?",
+    "suggestedQuestions": [
+      "What's the best time to plant cotton?",
+      "How to identify cotton pests?",
+      "Weather forecast for this week",
+      "Fertilizer recommendations"
+    ]
+  },
+  "disease": {
+    "title": "Disease Detection",
+    "subtitle": "Upload or capture a photo of the affected plant",
+    "uploadImage": "Upload Image",
+    "takePhoto": "Take Photo",
+    "analyzing": "AI is analyzing your image...",
+    "results": "Detection Results",
+    "diseaseName": "Disease Identified",
+    "severity": "Severity",
+    "early": "Early Stage",
+    "moderate": "Moderate",
+    "severe": "Severe",
+    "cureSteps": "Treatment Steps",
+    "prevention": "Prevention Tips",
+    "medicines": "Recommended Products",
+    "buyOnAmazon": "Buy on Amazon",
+    "buyOnFlipkart": "Buy on Flipkart",
+    "speakResults": "Listen to Results",
+    "scanAgain": "Scan Another Plant"
+  },
+  "news": {
+    "title": "News & Updates",
+    "schemes": "Government Schemes",
+    "agricultural": "Agricultural News",
+    "marketPrices": "Market Prices",
+    "readMore": "Read More",
+    "lastUpdated": "Last updated",
+    "pricePerQuintal": "per quintal",
+    "trending": "Trending"
+  },
+  "errors": {
+    "networkError": "Network error. Please check your connection.",
+    "invalidPhone": "Please enter a valid 10-digit phone number",
+    "serverError": "Server error. Please try again later.",
+    "sessionExpired": "Session expired. Please login again."
+  }
+}

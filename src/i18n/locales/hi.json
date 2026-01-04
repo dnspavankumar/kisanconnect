@@ -1,0 +1,115 @@
+{
+  "common": {
+    "appName": "किसान मित्र",
+    "tagline": "आपका स्मार्ट खेती साथी",
+    "loading": "लोड हो रहा है...",
+    "error": "कुछ गलत हो गया",
+    "retry": "फिर से कोशिश करें",
+    "cancel": "रद्द करें",
+    "confirm": "पुष्टि करें",
+    "save": "सहेजें",
+    "back": "वापस",
+    "next": "आगे",
+    "submit": "जमा करें",
+    "search": "खोजें",
+    "filter": "फ़िल्टर",
+    "all": "सभी",
+    "needHelp": "मदद चाहिए?",
+    "logout": "लॉगआउट"
+  },
+  "auth": {
+    "welcome": "किसान मित्र में आपका स्वागत है",
+    "subtitle": "आपका विश्वसनीय कपास खेती सहायक",
+    "loginTitle": "अपने खाते में लॉगिन करें",
+    "farmerId": "किसान आईडी (वैकल्पिक)",
+    "farmerIdPlaceholder": "अपना किसान आईडी दर्ज करें",
+    "phoneNumber": "मोबाइल नंबर",
+    "phonePlaceholder": "10 अंकों का मोबाइल नंबर दर्ज करें",
+    "getOtp": "OTP प्राप्त करें",
+    "enterOtp": "OTP दर्ज करें",
+    "otpSent": "OTP भेजा गया",
+    "verifyLogin": "सत्यापित करें और लॉगिन करें",
+    "resendOtp": "OTP फिर से भेजें",
+    "resendIn": "फिर से भेजें",
+    "seconds": "सेकंड में",
+    "invalidOtp": "अमान्य OTP. कृपया फिर से प्रयास करें।",
+    "otpExpired": "OTP समाप्त हो गया। कृपया नया अनुरोध करें।",
+    "voiceInput": "आवाज से इनपुट",
+    "speakNumber": "अपना फोन नंबर बोलें",
+    "listening": "सुन रहे हैं..."
+  },
+  "dashboard": {
+    "greeting": "नमस्ते",
+    "welcomeBack": "अपने खेत में आपका स्वागत है",
+    "todayWeather": "आज का मौसम",
+    "quickActions": "त्वरित कार्य",
+    "recentActivity": "हाल की गतिविधि"
+  },
+  "navigation": {
+    "home": "होम",
+    "chat": "AI सहायक",
+    "scan": "रोग स्कैन",
+    "news": "समाचार और योजनाएं"
+  },
+  "weather": {
+    "temperature": "तापमान",
+    "humidity": "नमी",
+    "wind": "हवा",
+    "condition": "स्थिति",
+    "feelsLike": "महसूस हो रहा है",
+    "sunny": "धूप",
+    "cloudy": "बादल",
+    "rainy": "बारिश",
+    "partlyCloudy": "आंशिक बादल"
+  },
+  "chatbot": {
+    "title": "AI खेती सहायक",
+    "placeholder": "फसलों, मौसम, उर्वरकों के बारे में पूछें...",
+    "voiceButton": "बोलने के लिए टैप करें",
+    "sendMessage": "भेजें",
+    "thinking": "सोच रहा हूं...",
+    "greeting": "नमस्ते! मैं आपका AI खेती सहायक हूं। आज मैं आपकी कैसे मदद कर सकता हूं?",
+    "suggestedQuestions": [
+      "कपास बोने का सबसे अच्छा समय क्या है?",
+      "कपास के कीड़ों की पहचान कैसे करें?",
+      "इस सप्ताह का मौसम पूर्वानुमान",
+      "उर्वरक सिफारिशें"
+    ]
+  },
+  "disease": {
+    "title": "रोग पहचान",
+    "subtitle": "प्रभावित पौधे की फोटो अपलोड या कैप्चर करें",
+    "uploadImage": "छवि अपलोड करें",
+    "takePhoto": "फोटो लें",
+    "analyzing": "AI आपकी छवि का विश्लेषण कर रहा है...",
+    "results": "पहचान परिणाम",
+    "diseaseName": "रोग पहचाना गया",
+    "severity": "गंभीरता",
+    "early": "प्रारंभिक चरण",
+    "moderate": "मध्यम",
+    "severe": "गंभीर",
+    "cureSteps": "उपचार के चरण",
+    "prevention": "रोकथाम के उपाय",
+    "medicines": "अनुशंसित उत्पाद",
+    "buyOnAmazon": "Amazon पर खरीदें",
+    "buyOnFlipkart": "Flipkart पर खरीदें",
+    "speakResults": "परिणाम सुनें",
+    "scanAgain": "दूसरा पौधा स्कैन करें"
+  },
+  "news": {
+    "title": "समाचार और अपडेट",
+    "schemes": "सरकारी योजनाएं",
+    "agricultural": "कृषि समाचार",
+    "marketPrices": "बाजार भाव",
+    "readMore": "और पढ़ें",
+    "lastUpdated": "अंतिम अपडेट",
+    "pricePerQuintal": "प्रति क्विंटल",
+    "trending": "ट्रेंडिंग"
+  },
+  "errors": {
+    "networkError": "नेटवर्क त्रुटि। कृपया अपना कनेक्शन जांचें।",
+    "invalidPhone": "कृपया एक वैध 10 अंकों का फोन नंबर दर्ज करें",
+    "serverError": "सर्वर त्रुटि। कृपया बाद में पुनः प्रयास करें।",
+    "sessionExpired": "सत्र समाप्त हो गया। कृपया फिर से लॉगिन करें।"
+  }
+}
