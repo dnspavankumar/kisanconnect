@@ -1,284 +1,168 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  /* Farmer-Friendly Earthy Theme */
+  --color-background: oklch(96% 0.01 45);
+  --color-foreground: oklch(25% 0.02 30);
 
-@layer base {
-  :root {
-    /* Farmer-Friendly Earthy Theme */
-    --background: 45 30% 96%;
-    --foreground: 30 15% 25%;
+  --color-card: oklch(100% 0 0);
+  --color-card-foreground: oklch(25% 0.02 30);
 
-    --card: 0 0% 100%;
-    --card-foreground: 30 15% 25%;
+  --color-popover: oklch(100% 0 0);
+  --color-popover-foreground: oklch(25% 0.02 30);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 30 15% 25%;
+  /* Earthy Green Primary */
+  --color-primary: oklch(45% 0.15 120);
+  --color-primary-foreground: oklch(100% 0 0);
 
-    /* Earthy Green Primary */
-    --primary: 120 40% 45%;
-    --primary-foreground: 0 0% 100%;
+  /* Warm Brown Secondary */
+  --color-secondary: oklch(50% 0.12 30);
+  --color-secondary-foreground: oklch(100% 0 0);
 
-    /* Warm Brown Secondary */
-    --secondary: 30 35% 50%;
-    --secondary-foreground: 0 0% 100%;
+  /* Soft Beige Muted */
+  --color-muted: oklch(92% 0.02 40);
+  --color-muted-foreground: oklch(45% 0.01 30);
 
-    /* Soft Beige Muted */
-    --muted: 40 20% 92%;
-    --muted-foreground: 30 10% 45%;
+  /* Golden Harvest Accent */
+  --color-accent: oklch(55% 0.18 45);
+  --color-accent-foreground: oklch(25% 0.02 30);
 
-    /* Golden Harvest Accent */
-    --accent: 45 85% 55%;
-    --accent-foreground: 30 15% 25%;
+  /* Alert Red */
+  --color-destructive: oklch(55% 0.22 0);
+  --color-destructive-foreground: oklch(100% 0 0);
 
-    /* Alert Red */
-    --destructive: 0 70% 55%;
-    --destructive-foreground: 0 0% 100%;
+  /* Success Green */
+  --color-success: oklch(50% 0.18 120);
+  --color-success-foreground: oklch(100% 0 0);
 
-    /* Success Green */
-    --success: 120 45% 50%;
-    --success-foreground: 0 0% 100%;
+  /* Warning Orange */
+  --color-warning: oklch(55% 0.20 35);
+  --color-warning-foreground: oklch(25% 0.02 30);
 
-    /* Warning Orange */
-    --warning: 35 90% 55%;
-    --warning-foreground: 30 15% 25%;
+  --color-border: oklch(88% 0.01 40);
+  --color-input: oklch(90% 0.01 40);
+  --color-ring: oklch(45% 0.15 120);
 
-    --border: 40 15% 88%;
-    --input: 40 15% 90%;
-    --ring: 120 40% 45%;
-
-    --radius: 0.75rem;
-
-    /* Simple Backgrounds */
-    --bg-hero: hsl(45 35% 94%);
-    --bg-card-green: hsl(120 30% 96%);
-    --bg-card-brown: hsl(30 30% 96%);
-    --bg-card-gold: hsl(45 40% 96%);
-
-    /* Simple Shadows */
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
-    --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.12);
-
-    /* Sidebar */
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 30 15% 25%;
-    --sidebar-primary: 120 40% 45%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 40 20% 94%;
-    --sidebar-accent-foreground: 30 15% 25%;
-    --sidebar-border: 40 15% 88%;
-    --sidebar-ring: 120 40% 45%;
-  }
-
-  .dark {
-    --background: 30 15% 12%;
-    --foreground: 45 20% 92%;
-
-    --card: 30 12% 16%;
-    --card-foreground: 45 20% 92%;
-
-    --popover: 30 12% 16%;
-    --popover-foreground: 45 20% 92%;
-
-    --primary: 120 45% 50%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 30 40% 55%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 30 10% 22%;
-    --muted-foreground: 45 15% 60%;
-
-    --accent: 45 80% 60%;
-    --accent-foreground: 30 15% 12%;
-
-    --destructive: 0 65% 50%;
-    --destructive-foreground: 0 0% 100%;
-
-    --success: 120 45% 50%;
-    --success-foreground: 0 0% 100%;
-
-    --warning: 35 85% 60%;
-    --warning-foreground: 30 15% 12%;
-
-    --border: 30 10% 24%;
-    --input: 30 10% 24%;
-    --ring: 120 45% 50%;
-
-    --bg-hero: hsl(30 15% 12%);
-
-    --sidebar-background: 30 12% 14%;
-    --sidebar-foreground: 45 20% 92%;
-    --sidebar-primary: 120 45% 50%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 30 10% 20%;
-    --sidebar-accent-foreground: 45 20% 92%;
-    --sidebar-border: 30 10% 24%;
-    --sidebar-ring: 120 45% 50%;
-  }
+  --radius: 0.75rem;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
 
-  html {
-    @apply scroll-smooth;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-feature-settings: "cv11", "ss01";
-  }
-
-  [lang="hi"] body,
-  .font-hindi {
-    font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
-  }
-
-  [lang="te"] body,
-  .font-telugu {
-    font-family: 'Noto Sans Telugu', 'Inter', sans-serif;
-  }
+* {
+  border-color: var(--color-border);
 }
 
-@layer components {
-  /* Hero Background */
-  .hero-bg {
-    background: var(--bg-hero);
-  }
-
-  /* Primary Button */
-  .btn-primary {
-    @apply bg-primary text-primary-foreground font-semibold rounded-lg py-3 px-6;
-    box-shadow: var(--shadow-sm);
-    transition: all 0.2s ease;
-  }
-
-  .btn-primary:hover {
-    @apply bg-primary/90;
-    box-shadow: var(--shadow-md);
-  }
-
-  .btn-primary:active {
-    @apply bg-primary/80;
-    box-shadow: var(--shadow-sm);
-  }
-
-  /* Weather Card */
-  .weather-card {
-    @apply bg-white rounded-xl border border-border;
-    box-shadow: var(--shadow-md);
-  }
-
-  /* Feature Card */
-  .feature-card {
-    @apply rounded-xl overflow-hidden bg-white border border-border;
-    box-shadow: var(--shadow-md);
-    transition: box-shadow 0.2s ease;
-  }
-
-  .feature-card:hover {
-    box-shadow: var(--shadow-lg);
-  }
-
-  .feature-card-green {
-    background: var(--bg-card-green);
-  }
-
-  .feature-card-brown {
-    background: var(--bg-card-brown);
-  }
-
-  .feature-card-gold {
-    background: var(--bg-card-gold);
-  }
-
-  /* Icon Circle */
-  .icon-circle {
-    @apply w-14 h-14 rounded-xl flex items-center justify-center;
-    box-shadow: var(--shadow-sm);
-  }
-
-  .icon-circle-green {
-    @apply bg-primary text-primary-foreground;
-  }
-
-  .icon-circle-brown {
-    @apply bg-secondary text-secondary-foreground;
-  }
-
-  .icon-circle-gold {
-    @apply bg-accent text-accent-foreground;
-  }
-
-  /* Simple Card */
-  .simple-card {
-    @apply bg-card rounded-xl border border-border;
-    box-shadow: var(--shadow-md);
-  }
-
-  /* OTP Input */
-  .otp-input {
-    @apply w-14 h-16 text-center text-2xl font-bold rounded-lg border-2 border-border bg-white;
-    @apply focus:border-primary focus:ring-2 focus:ring-primary/30 outline-none;
-    transition: all 0.2s ease;
-  }
-
-  /* Chat Bubble */
-  .chat-bubble-user {
-    @apply bg-primary text-primary-foreground rounded-xl rounded-br-sm;
-    box-shadow: var(--shadow-sm);
-  }
-
-  .chat-bubble-bot {
-    @apply bg-card text-card-foreground rounded-xl rounded-bl-sm border border-border;
-    box-shadow: var(--shadow-sm);
-  }
-
-  /* Disease Severity Indicators */
-  .severity-early {
-    @apply bg-success/10 text-success border border-success/20;
-  }
-
-  .severity-moderate {
-    @apply bg-warning/10 text-warning border border-warning/20;
-  }
-
-  .severity-severe {
-    @apply bg-destructive/10 text-destructive border border-destructive/20;
-  }
-
-  /* Skeleton Loader */
-  .skeleton {
-    @apply animate-pulse bg-muted rounded-lg;
-  }
-
-  /* Touch Friendly */
-  .touch-target {
-    @apply min-h-[48px] min-w-[48px] flex items-center justify-center;
-  }
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
 }
 
-@layer utilities {
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
+[lang="hi"] body,
+.font-hindi {
+  font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+}
 
-  .safe-bottom {
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-  }
+[lang="te"] body,
+.font-telugu {
+  font-family: 'Noto Sans Telugu', 'Inter', sans-serif;
+}
 
-  .safe-top {
-    padding-top: env(safe-area-inset-top, 0px);
-  }
+
+/* Custom Component Styles */
+.hero-bg {
+  background: oklch(94% 0.02 45);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+  font-weight: 600;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.weather-card {
+  background-color: white;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-color: white;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.otp-input {
+  width: 3.5rem;
+  height: 4rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  border: 2px solid var(--color-border);
+  background-color: white;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.otp-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.chat-bubble-user {
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+  border-radius: 0.75rem;
+  border-bottom-right-radius: 0.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.chat-bubble-bot {
+  background-color: var(--color-card);
+  color: var(--color-card-foreground);
+  border-radius: 0.75rem;
+  border-bottom-left-radius: 0.25rem;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
 }

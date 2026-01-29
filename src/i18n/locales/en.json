@@ -111,5 +111,81 @@
     "invalidPhone": "Please enter a valid 10-digit phone number",
     "serverError": "Server error. Please try again later.",
     "sessionExpired": "Session expired. Please login again."
+  },
+  "onboarding": {
+    "step": "Step",
+    "nameTitle": "What's your name?",
+    "nameSubtitle": "Help us personalize your experience",
+    "fullName": "Full Name",
+    "namePlaceholder": "Enter your full name",
+    "nameRequired": "Please enter your name",
+    "phoneTitle": "Your phone number",
+    "phoneSubtitle": "We use this to keep your account secure",
+    "languageTitle": "Choose your language",
+    "languageSubtitle": "Select your preferred language",
+    "locationTitle": "Where are you farming?",
+    "locationSubtitle": "Help us provide location-specific advice",
+    "location": "Location",
+    "locationPlaceholder": "e.g., Warangal, Telangana",
+    "locationRequired": "Please enter your location",
+    "complete": "Complete Setup",
+    "success": "Profile setup complete!",
+    "voiceNotSupported": "Voice input not supported in this browser",
+    "voiceError": "Voice input failed. Please try again."
+  },
+  "landing": {
+    "getStarted": "Get Started",
+    "hero": {
+      "badge": "Your Digital Farming Companion",
+      "title": "Empowering Farmers with",
+      "highlight": "Smart Agriculture",
+      "subtitle": "Get instant farming advice, disease detection, weather updates, and more - all in your language",
+      "cta": "Start Free",
+      "learn": "Learn More",
+      "imageText": "Smart Farming Made Simple"
+    },
+    "stats": {
+      "farmers": "Farmers",
+      "queries": "Queries Solved",
+      "languages": "Languages",
+      "support": "Support"
+    },
+    "features": {
+      "title": "Powerful Features for Modern Farmers",
+      "subtitle": "Everything you need to make informed farming decisions",
+      "chat": {
+        "title": "AI Agricultural Advisory",
+        "desc": "Get instant answers to your farming questions from our AI assistant"
+      },
+      "disease": {
+        "title": "Disease Detection",
+        "desc": "Identify crop diseases instantly with photo analysis"
+      },
+      "weather": {
+        "title": "Weather Insights",
+        "desc": "Real-time weather updates and farming recommendations"
+      },
+      "news": {
+        "title": "Agricultural News",
+        "desc": "Stay updated with latest schemes, prices, and farming news"
+      }
+    },
+    "benefits": {
+      "title": "Why Choose KisanMitra?",
+      "subtitle": "Built specifically for Indian farmers",
+      "multilingual": "Multilingual Support",
+      "mobile": "Mobile First",
+      "instant": "Instant Answers",
+      "secure": "Secure & Private"
+    },
+    "cta": {
+      "title": "Ready to Transform Your Farming?",
+      "subtitle": "Join thousands of farmers already using KisanMitra",
+      "button": "Get Started Now"
+    },
+    "footer": {
+      "tagline": "Empowering farmers with technology",
+      "rights": "All rights reserved."
+    }
   }
 }
