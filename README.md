@@ -1,4 +1,4 @@
-# 🌾 KisanMitra - Smart Agricultural Assistant
+# 🌾 KisanMitra - Smart Agricultural Assistant---
 
 A multilingual agricultural assistance application designed for farmers in India, providing AI-powered farming advice, disease detection, weather updates, and more.
 
