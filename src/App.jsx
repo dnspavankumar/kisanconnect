@@ -6,8 +6,9 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import LandingPage from "./pages/LandingPage";
+import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
 import OnboardingPage from "./pages/OnboardingPage";
-import AuthPage from "./pages/AuthPage";
 import Dashboard from "./pages/Dashboard";
 import ChatPage from "./pages/ChatPage";
 import DiseasePage from "./pages/DiseasePage";
@@ -27,7 +28,8 @@ const App = () => (
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<LandingPage />} />
-              <Route path="/auth" element={<AuthPage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/signup" element={<SignupPage />} />
               <Route path="/onboarding" element={<OnboardingPage />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/chat" element={<ChatPage />} />

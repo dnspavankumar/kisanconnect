@@ -30,10 +30,30 @@ const OnboardingPage = () => {
   
   const [formData, setFormData] = useState({
     name: '',
-    phone: user?.phoneNumber?.replace('+91', '') || '',
+    phone: '',
     language: currentLanguage || 'en',
     location: '',
   });
+
+  // Load existing user data
+  useEffect(() => {
+    const loadUserData = async () => {
+      if (user?.uid) {
+        const { getUserProfile } = await import('@/services/authService');
+        const profile = await getUserProfile(user.uid);
+        if (profile) {
+          setFormData(prev => ({
+            ...prev,
+            name: profile.name || '',
+            phone: profile.phone?.replace('+91', '') || '',
+            language: profile.language || currentLanguage || 'en',
+            location: profile.location || '',
+          }));
+        }
+      }
+    };
+    loadUserData();
+  }, [user, currentLanguage]);
 
   // Web Speech API for voice input
   const [recognition, setRecognition] = useState(null);

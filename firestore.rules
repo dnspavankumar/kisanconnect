@@ -1,0 +1,60 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Helper function to check if user is the owner
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    // Users collection
+    match /users/{userId} {
+      // Allow read if authenticated and is the owner
+      allow read: if isOwner(userId);
+      
+      // Allow create if authenticated and creating own document
+      allow create: if isOwner(userId) && 
+                       request.resource.data.uid == userId;
+      
+      // Allow update if authenticated and is the owner
+      // Prevent changing uid (if it exists)
+      allow update: if isOwner(userId) && 
+                       (!request.resource.data.keys().hasAny(['uid']) || 
+                        request.resource.data.uid == userId);
+      
+      // Prevent delete
+      allow delete: if false;
+    }
+    
+    // Chat messages collection (if needed in future)
+    match /chats/{chatId} {
+      allow read: if isAuthenticated() && 
+                     resource.data.userId == request.auth.uid;
+      allow create: if isAuthenticated() && 
+                       request.resource.data.userId == request.auth.uid;
+      allow update, delete: if isAuthenticated() && 
+                               resource.data.userId == request.auth.uid;
+    }
+    
+    // Disease detection history (if needed in future)
+    match /diseaseDetections/{detectionId} {
+      allow read: if isAuthenticated() && 
+                     resource.data.userId == request.auth.uid;
+      allow create: if isAuthenticated() && 
+                       request.resource.data.userId == request.auth.uid;
+      allow update, delete: if isAuthenticated() && 
+                               resource.data.userId == request.auth.uid;
+    }
+    
+    // Default deny all other collections
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

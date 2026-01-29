@@ -390,9 +390,7 @@ This project is licensed under the MIT License.
 - OpenWeather for weather data
 - All farmers who inspired this project
 
-## 📞 Support
 
-For support, email support@kisanmitra.com or open an issue.
 
 ---
 

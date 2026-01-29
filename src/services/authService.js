@@ -109,10 +109,26 @@ export const getUserProfile = async (uid) => {
 // Update user profile in Firestore
 export const updateUserProfile = async (uid, updates) => {
   try {
-    await updateDoc(doc(db, 'users', uid), {
+    const userRef = doc(db, 'users', uid);
+    const userDoc = await getDoc(userRef);
+    
+    const updateData = {
       ...updates,
       updatedAt: new Date().toISOString(),
-    });
+    };
+    
+    if (userDoc.exists()) {
+      // Update existing document
+      await updateDoc(userRef, updateData);
+    } else {
+      // Create new document if it doesn't exist
+      await setDoc(userRef, {
+        uid: uid,
+        ...updateData,
+        createdAt: new Date().toISOString(),
+      });
+    }
+    
     return { success: true };
   } catch (error) {
     console.error('Error updating user profile:', error);

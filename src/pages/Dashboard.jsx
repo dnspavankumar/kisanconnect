@@ -30,11 +30,12 @@ const Dashboard = () => {
   const [isLoadingWeather, setIsLoadingWeather] = useState(true);
   const [weatherError, setWeatherError] = useState(null);
 
-  useEffect(() => {
-    if (!authLoading && !isAuthenticated) {
-      navigate('/auth');
-    }
-  }, [isAuthenticated, authLoading, navigate]);
+  // TODO: Re-enable authentication later
+  // useEffect(() => {
+  //   if (!authLoading && !isAuthenticated) {
+  //     navigate('/login');
+  //   }
+  // }, [isAuthenticated, authLoading, navigate]);
 
   useEffect(() => {
     const loadWeather = async () => {
@@ -107,13 +108,14 @@ const Dashboard = () => {
     navigate('/auth');
   };
 
-  if (authLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center hero-bg">
-        <div className="w-10 h-10 border-4 border-primary/20 border-t-primary rounded-full animate-spin" />
-      </div>
-    );
-  }
+  // TODO: Re-enable authentication loading check later
+  // if (authLoading) {
+  //   return (
+  //     <div className="min-h-screen flex items-center justify-center hero-bg">
+  //       <div className="w-10 h-10 border-4 border-primary/20 border-t-primary rounded-full animate-spin" />
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="min-h-screen hero-bg pb-24">

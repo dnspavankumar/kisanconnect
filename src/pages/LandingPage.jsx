@@ -96,8 +96,14 @@ const LandingPage = () => {
             <div className="flex items-center gap-4">
               <LanguageSelector />
               <button
-                onClick={() => navigate('/auth')}
-                className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+                onClick={() => navigate('/login')}
+                className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-lg border-2 border-border bg-background hover:bg-muted transition-colors"
+              >
+                {t('landing.login') || 'Login'}
+              </button>
+              <button
+                onClick={() => navigate('/signup')}
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
               >
                 {t('landing.getStarted') || 'Get Started'}
                 <ArrowRight className="w-4 h-4" />
@@ -130,7 +136,7 @@ const LandingPage = () => {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
-                  onClick={() => navigate('/auth')}
+                  onClick={() => navigate('/signup')}
                   className="flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-lg font-semibold shadow-lg hover:shadow-xl"
                 >
                   {t('landing.hero.cta') || 'Start Free'}
