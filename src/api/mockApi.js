@@ -30,47 +30,50 @@ export const verifyOTP = async (phone, otp) => {
   };
 };
 
-// Chatbot API
-export const sendChatMessage = async (message, language) => {
-  await delay(1500);
+// Helper to detect language
+const detectLanguage = (text) => {
+  const hindiRegex = /[\u0900-\u097F]/;
+  const teluguRegex = /[\u0C00-\u0C7F]/;
+  if (hindiRegex.test(text)) return 'hi';
+  if (teluguRegex.test(text)) return 'te';
+  return 'en';
+};
 
-  const responses = {
-    en: {
-      default: {
-        message:
-          "I understand you're asking about cotton farming. Based on current weather conditions, I recommend checking soil moisture before irrigation. Would you like specific advice about pest control or fertilizers?",
-        suggestions: [
-          'Tell me about cotton pests',
-          'Fertilizer schedule',
-          'Weather forecast',
-        ],
-      },
-    },
-    hi: {
-      default: {
-        message:
-          'मैं समझता हूं कि आप कपास की खेती के बारे में पूछ रहे हैं। मौजूदा मौसम की स्थिति के आधार पर, मेरा सुझाव है कि सिंचाई से पहले मिट्टी की नमी की जांच करें। क्या आप कीट नियंत्रण या उर्वरकों के बारे में विशेष सलाह चाहते हैं?',
-        suggestions: [
-          'कपास के कीड़ों के बारे में बताएं',
-          'उर्वरक कार्यक्रम',
-          'मौसम पूर्वानुमान',
-        ],
-      },
-    },
-    te: {
-      default: {
-        message:
-          'మీరు పత్తి వ్యవసాయం గురించి అడుగుతున్నారని నాకు అర్థమైంది. ప్రస్తుత వాతావరణ పరిస్థితుల ఆధారంగా, నీటిపారుదల ముందు మట్టి తేమను తనిఖీ చేయమని నేను సిఫార్సు చేస్తున్నాను. తెగుళ్ళ నియంత్రణ లేదా ఎరువుల గురించి నిర్దిష్ట సలహా కావాలా?',
-        suggestions: [
-          'పత్తి తెగుళ్ళ గురించి చెప్పండి',
-          'ఎరువుల షెడ్యూల్',
-          'వాతావరణ సూచన',
-        ],
-      },
-    },
-  };
+// Real AI Chat Service
+export const sendChatMessage = async (message, uiLanguage) => {
+  const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8081';
+  const userLanguage = detectLanguage(message);
 
-  return responses[language]?.default || responses.en.default;
+  console.log(`[AI Service] 📡 Requesting: ${backendUrl}/chat (UI: ${uiLanguage}, User: ${userLanguage})`);
+
+  try {
+    const response = await fetch(`${backendUrl}/chat`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        message,
+        language: uiLanguage, // Legacy fallback
+        uiLanguage,
+        userLanguage
+      }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      // If backend sends an error (like API Key issue), we show it
+      throw new Error(data.content || data.error || 'Server connection failed');
+    }
+
+    // Return the real response from the backend
+    return {
+      message: data.content,
+      suggestions: data.suggestions || [],
+    };
+  } catch (error) {
+    console.error('[AI Service] ❌ Error:', error);
+    throw error; // Let the UI handle the error display
+  }
 };
 
 // Disease Detection API

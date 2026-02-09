@@ -15,6 +15,7 @@ import DiseasePage from "./pages/DiseasePage";
 import NewsPage from "./pages/NewsPage";
 import ProfilePage from "./pages/ProfilePage";
 import NotFound from "./pages/NotFound";
+import FloatingChatbot from "./components/chat/FloatingChatbot";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
+            <FloatingChatbot />
           </BrowserRouter>
         </TooltipProvider>
       </LanguageProvider>
