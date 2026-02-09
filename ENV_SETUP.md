@@ -1,6 +1,6 @@
 # Environment Variables Setup
 
-This document explains how to set up environment variables for the KisanMitra application.......
+This document explains how to set up environment variables for the KisanMitra application.
 
 ## Environment Files
 
